@@ -37,3 +37,9 @@ jobs:
       env:
         DEVKITPRO: /opt/devkitpro
       run: make
+      
+    - name: Artifact Results
+      uses: actions/download-artifact@v1
+      with:
+        name: KosmosCleaner
+        path: KosmosCleaner.zip
