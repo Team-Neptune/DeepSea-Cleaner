@@ -161,9 +161,9 @@ all: $(BUILD)
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
-	@mkdir -p $(CURDIR)/temp/atmosphere/010000000000DA7A/flags
-	@touch $(CURDIR)/temp/atmosphere/010000000000DA7A/flags/boot2.flags
-	@cp $(TARGET).nsp $(CURDIR)/temp/atmosphere/010000000000DA7A/exefs.nsp
+	@mkdir -p $(CURDIR)/temp/atmosphere/contents/010000000000DA7A/flags
+	@touch $(CURDIR)/temp/atmosphere/contents/010000000000DA7A/flags/boot2.flags
+	@cp $(TARGET).nsp $(CURDIR)/temp/atmosphere/contents/010000000000DA7A/exefs.nsp
 	@cd $(CURDIR)/temp/ && zip -q -r $(CURDIR)/$(TARGET).zip . && cd $(CURDIR)
 	@rm -rf $(CURDIR)/temp
 
