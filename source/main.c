@@ -89,8 +89,9 @@ int main(int argc, char * argv[]) {
     // Nichole Logo
     deleteFolder("sdmc:/atmosphere/exefs_patches/nichole_logo");
 
-    // Prevent this from running again.
-    deleteFile("sdmc:/atmosphere/contents/010000000000DA7A/flags/boot2.flag");
+    // Delete itself
+    deleteFolder("sdmc:/atmosphere/contents/010000000000DA7A/flags");
+    deleteFolder("sdmc:/atmosphere/contents/010000000000DA7A");
     
     return 0;
 }
