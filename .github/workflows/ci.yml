@@ -15,7 +15,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y apt-utils
-        sudo apt-get install -y --no-install-recommends sudo ca-certificates pkg-config curl wget bzip2 xz-utils make git bsdtar doxygen gnupg
+        sudo apt-get install -y --no-install-recommends sudo ca-certificates pkg-config curl wget bzip2 xz-utils make git bsdtar doxygen gnupg unzip
         sudo apt-get clean
 
     - name: Install devkitPro
@@ -37,9 +37,13 @@ jobs:
       env:
         DEVKITPRO: /opt/devkitpro
       run: make
+
+    - name: Extract Zip File
+      run: |
+        unzip KosmosCleaner.zip -d out
       
     - name: Artifact Results
       uses: actions/upload-artifact@v1
       with:
         name: KosmosCleaner
-        path: KosmosCleaner.zip
+        path: out/*
