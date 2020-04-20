@@ -40,10 +40,10 @@ jobs:
 
     - name: Extract Zip File
       run: |
-        unzip KosmosCleaner.zip -d out
+        unzip Kosmos-Cleaner.zip -d out
       
     - name: Artifact Results
       uses: actions/upload-artifact@v1
       with:
-        name: KosmosCleaner
+        name: Kosmos-Cleaner
         path: out/*
